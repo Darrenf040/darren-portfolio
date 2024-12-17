@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <header className="flex justify-between px-40 py-4 fixed w-full">
+      <header className="flex justify-between px-40 py-4 fixed w-full backdrop-blur-lg z-40">
         <a href="">DarrenF</a>
         <nav>
           <ul className="flex gap-12">
