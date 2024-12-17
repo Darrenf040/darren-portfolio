@@ -27,9 +27,9 @@ button {
 img {
   @apply max-w-full h-auto;
 }
-section {
+/* section {
   @apply px-40;
-}
+} */
 h1 {
   @apply text-7xl;
 }
