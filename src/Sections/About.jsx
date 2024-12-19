@@ -142,7 +142,7 @@ function Slider() {
   };
   return (
     <div
-      className="bg-[#252525] overflow-hidden"
+      className="bg-[#252525] overflow-hidden mt-4"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
