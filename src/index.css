@@ -37,3 +37,14 @@ h1 {
 h2 {
   @apply text-4xl;
 }
+input,
+textarea {
+  @apply rounded-lg;
+  color: black;
+  white-space: normal;
+  text-align: left; /* or right */
+  width: 100%;
+}
+input {
+  padding: 10px;
+}
