@@ -85,6 +85,7 @@ function Projects() {
         </div>
         <div className="w-[50%]">
           <Canvas>
+            <ambientLight />
             <PerspectiveCamera makeDefault position={[-6, 3, 1.2]} />
             <Center>
               <Suspense>

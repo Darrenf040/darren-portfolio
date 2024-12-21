@@ -2,6 +2,7 @@ import React from "react";
 import linkedIn from "/src/assets/icons/linkedin.svg";
 import github from "/src/assets/icons/green-github.svg";
 import email from "/src/assets/icons/mail.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
       <p className="text-[16px]">
         © 2024 Darren Francis&nbsp;
         <span className="underline">
-          <a href="">Credits</a>
+          <Link to={"/credit"}>Credits</Link>
         </span>
       </p>
     </footer>
