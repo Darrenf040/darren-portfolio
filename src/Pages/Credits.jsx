@@ -49,7 +49,7 @@ const Credits = () => {
             <p>
               <strong>Texture: Under Construction</strong>
               <br />
-              Model created by{" "}
+              Texture created by{" "}
               <a
                 href="https://www.vecteezy.com/members/nahumam"
                 target="_blank"

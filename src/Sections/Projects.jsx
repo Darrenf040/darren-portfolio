@@ -63,7 +63,7 @@ function Projects() {
                 className="flex items-center gap-4 "
                 target="_blank"
               >
-                <p>Check Live Site!</p>
+                <p>Live Site!</p>
                 <div className="w-5">
                   <img src={link} alt="" />
                 </div>
