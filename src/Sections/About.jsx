@@ -82,35 +82,39 @@ function About() {
     <section className="py-20">
       <h1 className="px-40 mb-5">01 About Me</h1>
       <div className="px-40 grid grid-cols-[4fr_6fr] gap-2">
-        <div className="w-full rounded-xl flex flex-col justify-between bg-[#252525] p-5">
+        <div className="w-full rounded-xl flex flex-col justify-between bg-[#252525] p-5 gap-7">
           <div className="max-w-72 self-center">
             <img className="rounded-full" src={me} alt="" />
           </div>
           <div>
-            <p className="mb-2">
+            <p className="mb-4">
               <b>Hi, I'm Darren Francis</b>
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat quibusdam iste culpa minus numquam, aspernatur dolorem
-              rem! Asperiores facere corporis repudiandae fugiat eligendi,
-              molestias recusandae consectetur suscipit ipsa dolores.
+            <p className="opacity-60 text-[16px]">
+              I'm a college student pursuing a degree in Computer Science, with
+              a focus on full-stack and web development. I'm passionate about
+              creating dynamic and user-friendly web applications and constantly
+              expanding my skills in modern technologies
             </p>
           </div>
         </div>
-        <div className="w-full rounded-xl bg-[#252525]">
-          <div className="flex flex-col  bg-no-repeat bg-cover p-5">
-            <div className="max-[270px] self-center">
-              <img src={img} alt="" />
-            </div>
-            <p className="mb-2">
+        <div className="w-full rounded-xl bg-[#252525] p-5 flex flex-col justify-between">
+          <div className="max-[270px] self-center">
+            <img src={img} alt="" />
+          </div>
+          <div>
+            <p className="mb-4">
               <b>My passion for coding</b>
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              placeat quibusdam iste culpa minus numquam, aspernatur dolorem
-              rem! Asperiores facere corporis repudiandae fugiat eligendi,
-              molestias recusandae consectetur suscipit ipsa dolores.
+            <p className="opacity-60 text-[16px]">
+              My passion for coding extends far beyond the classroom. Outside of
+              school, I actively work on personal projects that allow me to
+              solve real-world problems and turn ideas into reality. Whether
+              it's creating dynamic web applications or exploring innovative
+              solutions, I'm driven by the goal of building something
+              meaningful. Coding gives me the opportunity to combine creativity
+              with problem-solving, and it's this blend that keeps me motivated
+              to grow and push my limits every day
             </p>
           </div>
         </div>
