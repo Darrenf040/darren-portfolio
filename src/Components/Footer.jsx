@@ -5,7 +5,7 @@ import email from "/src/assets/icons/mail.svg";
 
 const Footer = () => {
   return (
-    <footer className="px-40 py-20 flex justify-between ">
+    <footer className="px-40 py-20 flex justify-between bg-black">
       <p className="text-[16px]" href="">
         darrenfr83@gmail.com
       </p>
