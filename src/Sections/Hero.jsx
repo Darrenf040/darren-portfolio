@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section id="hero" className="py-20 flex flex-col items-center">
       <div
-        className=" flex flex-col relative h-screen w-full items-center"
+        className="flex flex-col relative h-screen w-full items-center"
         id="canvas-container"
       >
         <div className="max-w-3xl text-accent-color">

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="px-40 py-20 flex justify-between bg-black">
+    <footer className="destop:px-40 tablet:px-10 phone:px-3 py-20 flex justify-between bg-black phone:max-tablet:flex-col phone:max-tablet:items-center phone:max-tablet:gap-5">
       <p className="text-[16px]" href="">
         darrenfr83@gmail.com
       </p>

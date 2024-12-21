@@ -30,14 +30,14 @@ function Projects() {
   };
   return (
     <section id="projects" className="py-40">
-      <h1 className="mx-40 my-5">02 My Work</h1>
-      <div className="w-full flex">
-        <div className="w-[50%] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
-          <h1 className="text-[30px]">{currentProject.name}</h1>
+      <h1 className="desktop:ml-40 tablet:ml-5 phone:ml-3 my-5">02 My Work</h1>
+      <div className="w-full flex phone:max-desktop:flex-col">
+        <div className="min-w-[65%] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
+          <h2 className="">{currentProject.name}</h2>
           <p className="opacity-50 text-white leading-relaxed">
             {currentProject.description}
           </p>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center phone:max-tablet:flex-col phone:max-tablet:gap-10">
             <div className="flex gap-3 items-center">
               {currentProject.techStackIcons.map((icon) => {
                 return (
@@ -47,25 +47,25 @@ function Projects() {
                 );
               })}
             </div>
-            <div className="flex gap-10">
+            <div className="flex flex-col gap-10 items-end">
               <a
                 href={currentProject.github}
-                className="flex items-center gap-4 "
+                className="flex items-center gap-4 bg-primary-color p-2 rounded-lg underline w-full"
                 target="_blank"
               >
                 <p>Repository</p>
                 <div className="w-5">
-                  <img src={github} alt="" />
+                  <img src={github} alt="Github Repository link" />
                 </div>
               </a>
               <a
                 href={currentProject.liveSite}
-                className="flex items-center gap-4 "
+                className="flex items-center justify-between bg-primary-color p-2 rounded-lg underline w-full"
                 target="_blank"
               >
                 <p>Live Site!</p>
                 <div className="w-5">
-                  <img src={link} alt="" />
+                  <img src={link} alt="Live project link" />
                 </div>
               </a>
             </div>
@@ -83,7 +83,7 @@ function Projects() {
             </button>
           </div>
         </div>
-        <div className="w-[50%]">
+        <div className="min-w-[35%]">
           <Canvas>
             <ambientLight />
             <PerspectiveCamera makeDefault position={[-6, 3, 1.2]} />

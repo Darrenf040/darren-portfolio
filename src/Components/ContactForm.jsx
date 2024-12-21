@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <form
       action=""
-      className="flex flex-col gap-8 mt-5 bg-[#252525] p-8 rounded-lg"
+      className="flex flex-col gap-8 justify-between mt-5 bg-[#252525] p-8 desktop:h-[550px] rounded-lg desktop:text-3xl tablet:text-2xl phone:text-base"
     >
       <div className="flex gap-5">
         <div className="w-[50%]">

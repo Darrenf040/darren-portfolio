@@ -80,17 +80,19 @@ const skillIconsList = [
 function About() {
   return (
     <section id="about" className="py-20">
-      <h1 className="px-40 mb-5">01 About Me</h1>
-      <div className="px-40 grid grid-cols-[4fr_6fr] gap-2">
+      <h1 className="mb-5 desktop:px-40 tablet:px-10 phone:px-3">
+        01 About Me
+      </h1>
+      <div className="desktop:px-40 phone:px-10 phone:max-tablet:px-3 grid desktop:grid-cols-[4fr_6fr] gap-2 phone:grid-cols-1">
         <div className="w-full rounded-xl flex flex-col justify-between bg-[#252525] p-5 gap-7">
           <div className="max-w-72 self-center">
             <img className="rounded-full" src={me} alt="" />
           </div>
           <div>
-            <p className="mb-4">
+            <h2 className="mb-4">
               <b>Hi, I'm Darren Francis</b>
-            </p>
-            <p className="opacity-60 text-[16px]">
+            </h2>
+            <p className="opacity-60">
               I'm a college student pursuing a degree in Computer Science, with
               a focus on full-stack and web development. I'm passionate about
               creating dynamic and user-friendly web applications and constantly
@@ -103,10 +105,10 @@ function About() {
             <img src={img} alt="" />
           </div>
           <div>
-            <p className="mb-4">
+            <h2 className="mb-4">
               <b>My passion for coding</b>
-            </p>
-            <p className="opacity-60 text-[16px]">
+            </h2>
+            <p className="opacity-60">
               My passion for coding extends far beyond the classroom. Outside of
               school, I actively work on personal projects that allow me to
               solve real-world problems and turn ideas into reality. Whether
@@ -156,7 +158,10 @@ function Slider() {
         className="flex overflow-hidden justify-between"
       >
         {skillIconsList.map((icon) => (
-          <div key={icon.id} className="w-[100px] h-[100px] flex-shrink-0 mx-2">
+          <div
+            key={icon.id}
+            className="desktop:w-[100px] desktop:h-[100px] flex-shrink-0 mx-2 desktop:scale-100 tablet:max-desktop:scale-75 phone:max-tablet:scale-50"
+          >
             <img src={icon.src} alt={icon.alt} className="w-full h-auto" />
           </div>
         ))}
@@ -187,36 +192,54 @@ function Skills() {
     };
   }, []);
   return (
-    <div className="skills mt-10 p-40 py-10">
+    <div className="skills mt-10 phone:px-40 py-10 phone:max-tablet:px-3">
       <div
         ref={skillsRef}
         className="flex justify-between relative bg-[#252525] rounded-xl px-5"
       >
         <div className="flex relative items-center">
-          <div className="flex-grow relative">
+          <div className="flex-grow relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute left-[-120px] right-5"></div>
           </div>
-          <div className="relative">
+          <div className="relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute left-[-120px] h-60 -z-50"></div>
           </div>
-          <div className="relative">
+          <div className="relative phone:max-tablet:hidden">
             <div
               className="border border-accent-color absolute left-[-120px] top-60 -z-50"
               style={{ width: `calc(${elementWidth}px + 200px)` }}
             ></div>
           </div>
 
-          <h1 className="text-[40px] text-accent-color">My Skills</h1>
+          <h1 className="text-accent-color">My Skills</h1>
         </div>
         <div className="flex items-center">
-          <h2 className="text-[30px] mr-10">Frontend</h2>
-          <h2 className="text-[30px] mr-10">Backend</h2>
-          <h2 className="text-[30px] mr-10">Design</h2>
-          <h2 className="text-[30px]">Tools</h2>
-          <div className="relative">
+          <select name="" id="" className="bg-black">
+            <option value="">
+              {" "}
+              <h2 className="mr-10">All</h2>
+            </option>
+            <option value="">
+              {" "}
+              <h2 className="mr-10">Frontend</h2>
+            </option>
+            <option value="">
+              {" "}
+              <h2 className="mr-10">Backend</h2>
+            </option>
+            <option value="">
+              {" "}
+              <h2 className="mr-10">Design</h2>
+            </option>
+            <option value="">
+              {" "}
+              <h2 className="mr-10">Tools</h2>
+            </option>
+          </select>
+          <div className="relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute right-[-120px] left-5"></div>
           </div>
-          <div className="relative">
+          <div className="relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute right-[-120px] h-60 -z-50"></div>
           </div>
         </div>
