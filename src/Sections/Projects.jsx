@@ -57,26 +57,30 @@ function Projects() {
               })}
             </div>
             <div className="flex flex-col gap-10 items-end">
-              <a
-                href={currentProject.github}
-                className="flex items-center gap-4 bg-primary-color p-2 rounded-lg underline w-full"
-                target="_blank"
-              >
-                <p>Repository</p>
-                <div className="w-5">
-                  <img src={github} alt="Github Repository link" />
-                </div>
-              </a>
-              <a
-                href={currentProject.liveSite}
-                className="flex items-center justify-between bg-primary-color p-2 rounded-lg underline w-full"
-                target="_blank"
-              >
-                <p>Live Site!</p>
-                <div className="w-5">
-                  <img src={link} alt="Live project link" />
-                </div>
-              </a>
+              {currentProject.github && (
+                <a
+                  href={currentProject.github}
+                  className="flex items-center gap-4 bg-primary-color p-2 rounded-lg underline w-full"
+                  target="_blank"
+                >
+                  <p>Repository</p>
+                  <div className="w-5">
+                    <img src={github} alt="Github Repository link" />
+                  </div>
+                </a>
+              )}
+              {currentProject.liveSite && (
+                <a
+                  href={currentProject.liveSite}
+                  className="flex items-center justify-between bg-primary-color p-2 rounded-lg underline w-full"
+                  target="_blank"
+                >
+                  <p>Live Site!</p>
+                  <div className="w-5">
+                    <img src={link} alt="Live project link" />
+                  </div>
+                </a>
+              )}
             </div>
           </div>
           <div className="flex justify-between items-center">
@@ -134,6 +138,7 @@ const projects = [
       "This project is a basic weather application built using JavaScript and Webpack. It fetches real-time weather data from a public API using asynchronous methods, allowing users to check current conditions for any location they search. The app highlights a simple, efficient design and demonstrates the seamless use of Webpack for modular JavaScript development.",
     techStackIcons: [js],
     github: "https://github.com/Darrenf040/Weather-app",
+    liveSite: "",
     projectPreview: "",
   },
   {
