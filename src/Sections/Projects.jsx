@@ -34,9 +34,18 @@ function Projects() {
       <div className="w-full flex phone:max-desktop:flex-col">
         <div className="min-w-[65%] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
           <h2 className="">{currentProject.name}</h2>
-          <p className="opacity-50 text-white leading-relaxed">
-            {currentProject.description}
-          </p>
+          <div>
+            <p className="opacity-50 text-white leading-relaxed">
+              {currentProject.description}
+              <br />
+            </p>
+            {currentProject.extra && (
+              <p className="mt-3 text-accent-color opacity-100">
+                <span className="underline">Notice:</span>{" "}
+                {currentProject.extra}
+              </p>
+            )}
+          </div>
           <div className="flex justify-between items-center phone:max-tablet:flex-col phone:max-tablet:gap-10">
             <div className="flex gap-3 items-center">
               {currentProject.techStackIcons.map((icon) => {
@@ -116,6 +125,8 @@ const projects = [
     liveSite: "https://gleaming-lokum-158537.netlify.app/",
     github: "https://github.com/Darrenf040/themepark",
     projectPreview: "",
+    extra:
+      "Please be aware that since the web app is hosted on a free tier, it may take a little longer to load the live site initially. Thank you for your patience!",
   },
   {
     name: "Weather App",
