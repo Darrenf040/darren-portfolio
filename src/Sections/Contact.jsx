@@ -5,7 +5,7 @@ import mail from "/src/assets/icons/mail.svg";
 
 function Contact() {
   return (
-    <section className="p-40">
+    <section className="py-40 flex flex-col justify-center items-center">
       <div className="flex gap-16 items-center">
         <h1>03 Contact Me</h1>
         <div className="flex gap-12">

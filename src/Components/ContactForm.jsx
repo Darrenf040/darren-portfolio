@@ -2,7 +2,10 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <form action="" className="flex flex-col gap-8 mt-5">
+    <form
+      action=""
+      className="flex flex-col gap-8 mt-5 bg-[#252525] p-8 rounded-lg"
+    >
       <div className="flex gap-5">
         <div className="w-[50%]">
           <label htmlFor="email">Email</label>
@@ -26,6 +29,7 @@ const ContactForm = () => {
           placeholder="Enter your description here"
         ></textarea>
       </div>
+      <button className="text-black bg-accent-color rounded-3xl">Submit</button>
     </form>
   );
 };

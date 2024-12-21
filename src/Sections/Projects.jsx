@@ -32,7 +32,7 @@ function Projects() {
     <section className="py-40">
       <h1 className="mx-40 my-5">02 My Work</h1>
       <div className="w-full flex">
-        <div className="w-[50%] h-[530px] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
+        <div className="w-[50%] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
           <h1 className="text-[30px]">{currentProject.name}</h1>
           <p className="opacity-50 text-white leading-relaxed">
             {currentProject.description}
