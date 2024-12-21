@@ -6,7 +6,7 @@ import { CanvasModel } from "../Components/Model";
 
 function Hero() {
   return (
-    <section className="py-20 flex flex-col items-center">
+    <section id="hero" className="py-20 flex flex-col items-center">
       <div
         className=" flex flex-col relative h-screen w-full items-center"
         id="canvas-container"

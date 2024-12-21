@@ -79,7 +79,7 @@ const skillIconsList = [
 
 function About() {
   return (
-    <section className="py-20">
+    <section id="about" className="py-20">
       <h1 className="px-40 mb-5">01 About Me</h1>
       <div className="px-40 grid grid-cols-[4fr_6fr] gap-2">
         <div className="w-full rounded-xl flex flex-col justify-between bg-[#252525] p-5 gap-7">

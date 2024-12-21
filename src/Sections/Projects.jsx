@@ -29,7 +29,7 @@ function Projects() {
     });
   };
   return (
-    <section className="py-40">
+    <section id="projects" className="py-40">
       <h1 className="mx-40 my-5">02 My Work</h1>
       <div className="w-full flex">
         <div className="w-[50%] flex flex-col justify-between gap-8 bg-black p-8 rounded-lg">
