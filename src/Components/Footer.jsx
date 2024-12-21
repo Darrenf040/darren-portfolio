@@ -28,7 +28,12 @@ const Footer = () => {
           <img src={email} alt="Mail icon" />
         </a>
       </div>
-      <p className="text-[16px]">© 2024 Darren Francis All Rights Reserved</p>
+      <p className="text-[16px]">
+        © 2024 Darren Francis&nbsp;
+        <span className="underline">
+          <a href="">Credits</a>
+        </span>
+      </p>
     </footer>
   );
 };
