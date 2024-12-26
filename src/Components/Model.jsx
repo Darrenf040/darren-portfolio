@@ -8,37 +8,49 @@ import {
   Preload,
   useGLTF,
   PerspectiveCamera,
+  Center,
 } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 
 function Model(props) {
   const model = useGLTF("/gaming_desktop_pc/scene.gltf");
+  const { viewport } = useThree();
+  const scale = Math.max(viewport.width / 35, 0.6);
   return (
-    <mesh position={[0, -2.5, -3]}>
+    <mesh scale={scale} position={[0, -2.5, -3]} onClick={props.onClick}>
       <hemisphereLight intensity={0.15} />
       <pointLight intensity={0.3} />
-      <primitive object={model.scene} scale={1.5} />
+      <primitive object={model.scene} rotation={[0, (19 * Math.PI) / 12, 0]} />
     </mesh>
   );
 }
 
 export function CanvasModel() {
+  const controlsRef = useRef(null);
+  const logRotation = () => {
+    if (controlsRef.current) {
+      const { rotation } = controlsRef.current.object; // Camera object
+      console.log(
+        `Camera Rotation: x=${rotation.x}, y=${rotation.y}, z=${rotation.z}`
+      );
+    }
+  };
   return (
-    <Canvas
-      frameloop="demand"
-      gl={{ preserveDrawingBuffer: true }}
-      className="absolute flex-1 w-[1200px]"
-    >
+    <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       <PerspectiveCamera makeDefault position={[5, 5, 15]} fov={70} />
       <Suspense>
         <OrbitControls
+          onClick={logRotation}
+          ref={controlsRef}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           enablePan={false}
         />
       </Suspense>
-      <Model />
+      <Center>
+        <Model onClick={logRotation} />
+      </Center>
 
       <Preload all />
     </Canvas>

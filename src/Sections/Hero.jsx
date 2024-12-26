@@ -2,9 +2,12 @@ import { CanvasModel } from "../Components/Model";
 
 function Hero() {
   return (
-    <section id="hero" className="py-20 flex flex-col items-center">
+    <section
+      id="hero"
+      className="py-20 flex flex-col items-center h-screen phone:max-tablet:h-[65vh]"
+    >
       <div
-        className="flex flex-col relative h-screen w-full items-center"
+        className="flex flex-col relative w-[100%] items-center flex-1"
         id="canvas-container"
       >
         <div className="max-w-3xl">
