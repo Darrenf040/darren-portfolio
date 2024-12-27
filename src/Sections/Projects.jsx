@@ -164,8 +164,6 @@ const Laptop3DModel = ({ projectPreview, projectIndex }) => {
       calculatedPosition = [0, 0, 0.5];
     }
 
-    calculatedPosition = [0, 0, 0.5];
-
     setPosition(calculatedPosition);
     setScale(calculatedScale);
   }, [viewport.width]);
