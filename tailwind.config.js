@@ -10,7 +10,7 @@ export default {
       },
       colors: {
         "primary-color": "#1B1B1B", //background color
-        "secondary-color": "#EEF8CF",
+        "secondary-color": "#EEF8CF", //text color
         "accent-color": "#D1FF48",
       },
     },
