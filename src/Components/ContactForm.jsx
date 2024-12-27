@@ -1,35 +1,97 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { FadeLoader } from "react-spinners";
 
 const ContactForm = () => {
+  const form = useRef(null);
+  const nameRef = useRef(null);
+  const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setSuccess(false);
+    setIsError(false);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_KEY,
+        }
+      )
+      .then(
+        () => {
+          setName(nameRef.current.value);
+          setSuccess(true);
+          form.current.reset();
+          setIsLoading(false);
+        },
+        (error) => {
+          setIsError(true);
+          setIsLoading(false);
+        }
+      );
+  };
+
   return (
     <form
-      action=""
+      ref={form}
+      onSubmit={sendEmail}
       className="flex flex-col gap-8 justify-between mt-5 bg-[#252525] p-8 desktop:h-[550px] rounded-lg desktop:text-3xl tablet:text-2xl phone:text-base"
     >
       <div className="flex gap-5">
         <div className="w-[50%]">
-          <label htmlFor="email">Email</label>
+          <label>Name</label>
           <br />
-          <input id="email" type="text" />
+          <input
+            ref={nameRef}
+            type="text"
+            name="user_name"
+            defaultValue={""}
+            required
+          />
         </div>
         <div className="w-[50%]">
-          <label htmlFor="phone">Phone Number</label>
+          <label>Email</label>
           <br />
-          <input id="phone" type="text" />
+          <input type="email" name="user_email" defaultValue={""} required />
         </div>
       </div>
       <div>
-        <label htmlFor="description">Description</label>
-        <br />
+        <label>Message</label>
         <textarea
+          name="message"
           id="description"
-          name="description"
           rows="4"
           cols="50"
           placeholder="Enter your description here"
-        ></textarea>
+          defaultValue={""}
+          required
+        />{" "}
       </div>
-      <button className="text-black bg-accent-color rounded-3xl">Submit</button>
+
+      <button type="submit" className="text-black bg-accent-color rounded-3xl">
+        Submit
+      </button>
+      <div className="flex justify-center">
+        <FadeLoader color="#d1ff48" loading={isLoading} />
+        {success ? (
+          <p className="text-accent-color">{`Thanks ${name}, Message Sent Sucessfully`}</p>
+        ) : (
+          ""
+        )}
+        {isError ? (
+          <p className="text-accent-color">Error Sending Message</p>
+        ) : (
+          ""
+        )}
+      </div>
     </form>
   );
 };

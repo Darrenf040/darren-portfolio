@@ -3,7 +3,7 @@ import menu from "../assets/icons/mobile-menu.svg";
 import close from "../assets/icons/menu-close.svg";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -35,7 +35,7 @@ function Header() {
           <div
             className={`w-[70vw] h-screen absolute right-0 top-0 bottom-0 bg-secondary-color text-black ${
               isOpen ? "block" : "hidden"
-            } z-30 phone:px-3 py-4`}
+            } z-30 phone:px-3 py-4 tablet:hidden`}
           >
             <ul className="flex flex-col items-center justify-center gap-20 h-full text-3xl relative">
               <li className="absolute top-0 right-0">
