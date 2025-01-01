@@ -1,6 +1,7 @@
 import { useState } from "react";
 import menu from "../assets/icons/mobile-menu.svg";
 import close from "../assets/icons/menu-close.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,20 +12,20 @@ function Header() {
   return (
     <>
       <header className="flex justify-between desktop:px-40 tablet:px-10 phone:px-3 py-4 fixed w-full backdrop-blur-lg z-40">
-        <a href="/">DarrenF</a>
+        <Link href="/">DarrenF</Link>
         <nav>
           <ul className="flex gap-12">
             <li className="phone:max-tablet:hidden">
-              <a href="/#hero">Home</a>
+              <Link href="/#hero">Home</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <a href="/#about">About</a>
+              <Link href="/#about">About</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <a href="/#projects">Projects</a>
+              <Link href="/#projects">Projects</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <a href="/#contact">Contact</a>
+              <Link href="/#contact">Contact</Link>
             </li>
             <li className="tablet:hidden">
               <button onClick={handleClick} className="p-0">
@@ -45,24 +46,24 @@ function Header() {
               </li>
 
               <li>
-                <a href="/#hero" onClick={handleClick}>
+                <Link href="/#hero" onClick={handleClick}>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#about" onClick={handleClick}>
+                <Link href="/#about" onClick={handleClick}>
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#projects" onClick={handleClick}>
+                <Link href="/#projects" onClick={handleClick}>
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contact" onClick={handleClick}>
+                <Link href="/#contact" onClick={handleClick}>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
