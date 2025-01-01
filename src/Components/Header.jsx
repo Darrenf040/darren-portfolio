@@ -12,20 +12,20 @@ function Header() {
   return (
     <>
       <header className="flex justify-between desktop:px-40 tablet:px-10 phone:px-3 py-4 fixed w-full backdrop-blur-lg z-40">
-        <Link href="/">DarrenF</Link>
+        <Link to="/">DarrenF</Link>
         <nav>
           <ul className="flex gap-12">
             <li className="phone:max-tablet:hidden">
-              <Link href="/#hero">Home</Link>
+              <Link to="/#hero">Home</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <Link href="/#about">About</Link>
+              <Link to="/#about">About</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <Link href="/#projects">Projects</Link>
+              <Link to="/#projects">Projects</Link>
             </li>
             <li className="phone:max-tablet:hidden">
-              <Link href="/#contact">Contact</Link>
+              <Link to="/#contact">Contact</Link>
             </li>
             <li className="tablet:hidden">
               <button onClick={handleClick} className="p-0">
@@ -46,22 +46,22 @@ function Header() {
               </li>
 
               <li>
-                <Link href="/#hero" onClick={handleClick}>
+                <Link to="/#hero" onClick={handleClick}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/#about" onClick={handleClick}>
+                <Link to="/#about" onClick={handleClick}>
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/#projects" onClick={handleClick}>
+                <Link to="/#projects" onClick={handleClick}>
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" onClick={handleClick}>
+                <Link to="/#contact" onClick={handleClick}>
                   Contact
                 </Link>
               </li>
