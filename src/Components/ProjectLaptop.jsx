@@ -13,9 +13,13 @@ import gsap from "gsap";
 
 export default function ProjectLaptop(props) {
   const groupRef = useRef(null);
-  const { nodes, materials } = useGLTF("/models/dell_laptop.glb");
+  const { nodes, materials } = useGLTF(
+    "/darren-portfolio/models/dell_laptop.glb"
+  );
   const txt = useVideoTexture(
-    props.video ? props.video : "/textures/project/sample_video.mov"
+    props.video
+      ? props.video
+      : "/darren-portfolio/textures/project/sample_video.mov"
   );
 
   useGSAP(() => {

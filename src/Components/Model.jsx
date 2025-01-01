@@ -14,7 +14,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import CanvasLoader from "./CanvasLoader";
 
 function Model(props) {
-  const model = useGLTF("/gaming_desktop_pc/scene.gltf");
+  const model = useGLTF("/darren-portfolio/gaming_desktop_pc/scene.gltf");
   const { viewport } = useThree();
   const scale = Math.max(viewport.width / 35, 0.6);
   return (
