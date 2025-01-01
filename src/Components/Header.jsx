@@ -12,7 +12,7 @@ function Header() {
   return (
     <>
       <header className="flex justify-between desktop:px-40 tablet:px-10 phone:px-3 py-4 fixed w-full backdrop-blur-lg z-40">
-        <Link to="/">DarrenF</Link>
+        <Link to="/#hero">DarrenF</Link>
         <nav>
           <ul className="flex gap-12">
             <li className="phone:max-tablet:hidden">
