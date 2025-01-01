@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import SkillsFilter from "./SkillsFilter";
 
-export default function Skills() {
+export default function Skills({ skillFilter, setSkillFilter }) {
   const skillsRef = useRef(null);
   const [elementWidth, setElementWidth] = useState(0);
 
@@ -9,7 +10,6 @@ export default function Skills() {
       setElementWidth(skillsRef.current.offsetWidth);
     }
 
-    // Optionally, update the width on window resize
     const handleResize = () => {
       if (skillsRef.current) {
         setElementWidth(skillsRef.current.offsetWidth);
@@ -22,6 +22,7 @@ export default function Skills() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <div className="skills mt-10 phone:px-40 py-10 phone:max-tablet:px-3">
       <div
@@ -45,28 +46,10 @@ export default function Skills() {
           <h1 className="text-accent-color">My Skills</h1>
         </div>
         <div className="flex items-center">
-          <select name="" id="" className="bg-black">
-            <option value="">
-              {" "}
-              <h2 className="mr-10">All</h2>
-            </option>
-            <option value="">
-              {" "}
-              <h2 className="mr-10">Frontend</h2>
-            </option>
-            <option value="">
-              {" "}
-              <h2 className="mr-10">Backend</h2>
-            </option>
-            <option value="">
-              {" "}
-              <h2 className="mr-10">Design</h2>
-            </option>
-            <option value="">
-              {" "}
-              <h2 className="mr-10">Tools</h2>
-            </option>
-          </select>
+          <SkillsFilter
+            skillFilter={skillFilter}
+            setSkillFilter={setSkillFilter}
+          />
           <div className="relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute right-[-120px] left-5"></div>
           </div>

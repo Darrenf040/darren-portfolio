@@ -3,8 +3,11 @@ import me from "/src/assets/me.jpeg";
 
 import Slider from "../Components/Slider";
 import Skills from "../Components/Skills";
+import { useState } from "react";
 
 function About() {
+  const [skillFilter, setSkillFilter] = useState("all"); // Manage state here
+
   return (
     <section id="about" className="py-20">
       <h1 className="mb-5 desktop:px-40 tablet:px-10 phone:px-3">
@@ -23,7 +26,7 @@ function About() {
               I'm a college student pursuing a degree in Computer Science, with
               a focus on full-stack and web development. I'm passionate about
               creating dynamic and user-friendly web applications and constantly
-              expanding my skills in modern technologies
+              expanding my skills in modern technologies.
             </p>
           </div>
         </div>
@@ -38,18 +41,13 @@ function About() {
             <p className="opacity-60">
               My passion for coding extends far beyond the classroom. Outside of
               school, I actively work on personal projects that allow me to
-              solve real-world problems and turn ideas into reality. Whether
-              it's creating dynamic web applications or exploring innovative
-              solutions, I'm driven by the goal of building something
-              meaningful. Coding gives me the opportunity to combine creativity
-              with problem-solving, and it's this blend that keeps me motivated
-              to grow and push my limits every day
+              solve real-world problems and turn ideas into reality.
             </p>
           </div>
         </div>
       </div>
-      <Skills />
-      <Slider />
+      <Skills skillFilter={skillFilter} setSkillFilter={setSkillFilter} />
+      <Slider skillFilter={skillFilter} /> {/* Pass skillFilter to Slider */}
     </section>
   );
 }
