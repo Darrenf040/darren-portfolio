@@ -11,6 +11,7 @@ import {
   Center,
 } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
+import CanvasLoader from "./CanvasLoader";
 
 function Model(props) {
   const model = useGLTF("/gaming_desktop_pc/scene.gltf");
@@ -27,30 +28,22 @@ function Model(props) {
 
 export function CanvasModel() {
   const controlsRef = useRef(null);
-  const logRotation = () => {
-    if (controlsRef.current) {
-      const { rotation } = controlsRef.current.object; // Camera object
-      console.log(
-        `Camera Rotation: x=${rotation.x}, y=${rotation.y}, z=${rotation.z}`
-      );
-    }
-  };
+
   return (
     <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       <PerspectiveCamera makeDefault position={[5, 5, 15]} fov={70} />
-      <Suspense>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
-          onClick={logRotation}
           ref={controlsRef}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           enablePan={false}
         />
+        <Center>
+          <Model />
+        </Center>
       </Suspense>
-      <Center>
-        <Model onClick={logRotation} />
-      </Center>
 
       <Preload all />
     </Canvas>

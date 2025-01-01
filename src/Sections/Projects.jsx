@@ -12,6 +12,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import ProjectLaptop from "../Components/ProjectLaptop";
+import CanvasLoader from "../Components/CanvasLoader";
 
 function Projects() {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -171,7 +172,7 @@ const Laptop3DModel = ({ projectPreview, projectIndex }) => {
     <>
       <ambientLight />
       <PerspectiveCamera makeDefault position={[-6, 3, 1.2]} fov={65} />
-      <Suspense>
+      <Suspense fallback={<CanvasLoader />}>
         <group scale={scale} position={position}>
           <ProjectLaptop video={projectPreview} next={projectIndex} />
         </group>
