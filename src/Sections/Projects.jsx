@@ -99,7 +99,7 @@ function Projects() {
           </div>
         </div>
         <div className="min-w-[40%] h-[690px]">
-          <Canvas className="min-h-[400px] h-full">
+          <Canvas className="min-h-[400px] h-full phone:max-tablet:-z-50">
             <Center>
               <Laptop3DModel
                 projectPreview={projectPreview}
