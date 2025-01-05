@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import SkillsFilter from "./SkillsFilter";
 
-export default function Skills({ skillFilter, setSkillFilter }) {
+export default function Skills() {
   const skillsRef = useRef(null);
   const [elementWidth, setElementWidth] = useState(0);
 
@@ -46,10 +46,7 @@ export default function Skills({ skillFilter, setSkillFilter }) {
           <h1 className="text-accent-color">My Skills</h1>
         </div>
         <div className="flex items-center">
-          <SkillsFilter
-            skillFilter={skillFilter}
-            setSkillFilter={setSkillFilter}
-          />
+          <SkillsFilter />
           <div className="relative phone:max-tablet:hidden">
             <div className="border border-accent-color absolute right-[-120px] left-5"></div>
           </div>

@@ -1,4 +1,9 @@
-export default function SkillsFilter({ skillFilter, setSkillFilter }) {
+import { useContext } from "react";
+import { skillContext } from "../Utils/SkillContext";
+
+export default function SkillsFilter() {
+  const { skillFilter, setSkillFilter } = useContext(skillContext);
+
   const handleFilterChange = (e) => {
     setSkillFilter(e.target.value); // Update the filter when a new option is selected
   };

@@ -1,7 +1,10 @@
 import Marquee from "react-fast-marquee";
 import { skillIconsList } from "../skillsList";
+import { skillContext } from "../Utils/SkillContext";
+import { useContext } from "react";
 
-export default function Slider({ skillFilter }) {
+export default function Slider() {
+  const skillFilter = useContext(skillContext);
   const filteredSkills = skillIconsList.filter((skill) => {
     if (skillFilter == "all") {
       return skill;

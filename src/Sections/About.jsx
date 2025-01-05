@@ -4,7 +4,7 @@ import me from "/src/assets/me.jpeg";
 import Slider from "../Components/Slider";
 import Skills from "../Components/Skills";
 import { useState } from "react";
-
+import { skillContext } from "../Utils/SkillContext";
 function About() {
   const [skillFilter, setSkillFilter] = useState("all"); // Manage state here
 
@@ -46,8 +46,13 @@ function About() {
           </div>
         </div>
       </div>
-      <Skills skillFilter={skillFilter} setSkillFilter={setSkillFilter} />
-      <Slider skillFilter={skillFilter} /> {/* Pass skillFilter to Slider */}
+      <skillContext.Provider value={{ skillFilter, setSkillFilter }}>
+        <Skills />
+      </skillContext.Provider>
+
+      <skillContext.Provider value={skillFilter}>
+        <Slider />
+      </skillContext.Provider>
     </section>
   );
 }
