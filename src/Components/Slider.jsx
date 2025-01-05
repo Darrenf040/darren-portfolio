@@ -1,10 +1,12 @@
 import Marquee from "react-fast-marquee";
 import { skillIconsList } from "../skillsList";
 import { skillContext } from "../Utils/SkillContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function Slider() {
   const skillFilter = useContext(skillContext);
+  const [resetKey, setResetKey] = useState(0);
+
   const filteredSkills = skillIconsList.filter((skill) => {
     if (skillFilter == "all") {
       return skill;
@@ -12,9 +14,17 @@ export default function Slider() {
     return skill.type.some((currentType) => currentType === skillFilter); // Check if any type matches skillFilter
   });
 
+  const resetMarquee = () => {
+    setResetKey((prevKey) => prevKey + 1);
+  };
+
+  useEffect(() => {
+    resetMarquee();
+  }, [skillFilter]);
+
   return (
     <div className="bg-[#252525] overflow-hidden">
-      <Marquee pauseOnHover={true} direction="right">
+      <Marquee pauseOnHover={true} direction="right" key={resetKey}>
         <div
           id="slider"
           className="flex overflow-hidden justify-between w-full"
