@@ -14,7 +14,11 @@ function Contact() {
         <div className="flex desktop:gap-12 tablet:gap-4">
           <a href="https://github.com/Darrenf040" target="_blank">
             <div className="w-[75px] h-[75px] desktop:scale-100 tablet:scale-65 phone:scale-50">
-              <img className="w-full" src={github} alt="Github Link" />
+              <img
+                className="w-full icon transition duration-300 hover:scale-125"
+                src={github}
+                alt="Github Link"
+              />
             </div>
           </a>
           <a
@@ -22,12 +26,20 @@ function Contact() {
             target="_blank"
           >
             <div className="w-[75px] h-[75px] desktop:scale-100 tablet:scale-65 phone:scale-50">
-              <img className="w-full" src={linkedIn} alt="Linkedin Link" />
+              <img
+                className="w-full icon transition duration-300 hover:scale-125"
+                src={linkedIn}
+                alt="Linkedin Link"
+              />
             </div>
           </a>
           <a href="mailto:darrenfr83@email.com">
             <div className="w-[75px] h-[75px] desktop:scale-100 tablet:scale-65 phone:scale-50">
-              <img className="w-full" src={mail} alt="Email Link" />
+              <img
+                className="w-full transition duration-300 hover:scale-125"
+                src={mail}
+                alt="Email Link"
+              />
             </div>
           </a>
         </div>

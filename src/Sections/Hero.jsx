@@ -12,9 +12,7 @@ function Hero() {
       >
         <div className="max-w-3xl">
           <h1 className=" text-center">Hi, I'm Darren,</h1>
-          <h1 className=" text-center text-accent-color">
-            Full Stack Developer
-          </h1>
+          <h1 className="text-center text-accent-color type-example type-roles"></h1>
         </div>
         <CanvasModel />
       </div>

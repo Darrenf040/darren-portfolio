@@ -61,10 +61,13 @@ function Projects() {
               {currentProject.github && (
                 <a
                   href={currentProject.github}
-                  className="flex items-center justify-between gap-4 bg-primary-color p-2 rounded-lg underline desktop:w-full tablet:w-full phone:w-fit"
+                  className="flex relative items-center justify-between gap-4 bg-primary-color p-2 rounded-lg desktop:w-full tablet:w-full phone:w-fit group"
                   target="_blank"
                 >
-                  <p>Repository</p>
+                  <p className="relative">
+                    Repository
+                    <span className="absolute bottom-0 left-0 w-[50%] h-[2px] bg-secondary-color transition-[width] duration-300 group-hover:w-full"></span>
+                  </p>
                   <div className="w-5">
                     <img src={github} alt="Github Repository link" />
                   </div>
@@ -73,10 +76,13 @@ function Projects() {
               {currentProject.liveSite && (
                 <a
                   href={currentProject.liveSite}
-                  className="flex items-center justify-between gap-4 bg-primary-color p-2 rounded-lg underline desktop:w-full tablet:w-full phone:w-fit"
+                  className="flex items-center justify-between gap-4 bg-primary-color p-2 rounded-lg desktop:w-full tablet:w-full phone:w-fit group"
                   target="_blank"
                 >
-                  <p>Live Site!</p>
+                  <p className="relative">
+                    Live Site!
+                    <span className="absolute bottom-0 left-0 bg-secondary-color h-[2px] w-[50%] transition-[width] group-hover:w-full"></span>
+                  </p>
                   <div className="w-5">
                     <img src={link} alt="Live project link" />
                   </div>

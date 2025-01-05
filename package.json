@@ -25,6 +25,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^7.1.0",
     "react-spinners": "^0.15.0",
+    "tailwind-typewriter": "^1.0.1",
     "three": "^0.171.0"
   },
   "devDependencies": {

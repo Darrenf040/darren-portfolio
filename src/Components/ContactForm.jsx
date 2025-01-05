@@ -76,7 +76,10 @@ const ContactForm = () => {
         />{" "}
       </div>
 
-      <button type="submit" className="text-black bg-accent-color rounded-3xl">
+      <button
+        type="submit"
+        className="text-primary-color bg-accent-color rounded-3xl hover:bg-primary-color hover:text-accent-color transition-colors duration-300"
+      >
         Submit
       </button>
       <div className="flex justify-center">

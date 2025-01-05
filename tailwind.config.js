@@ -19,5 +19,15 @@ export default {
       devil: ["Devil Breeze", "Anniversary", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-typewriter")({
+      wordsets: {
+        roles: {
+          words: ["Software Engineer", "Full Stack Developer", "Web Developer"],
+          delay: 3,
+          writeSpeed: 0.15,
+        },
+      },
+    }),
+  ],
 };

@@ -12,20 +12,23 @@ const Footer = () => {
       </p>
       <div className="flex gap-5">
         <a
-          className="w-[25px]"
+          className="w-[25px] transition duration-300 hover:scale-125"
           href="https://www.linkedin.com/in/darren-francis-8299ab253/"
           target="_blank"
         >
           <img src={linkedIn} alt="Linkedin icon" />
         </a>
         <a
-          className="w-[25px]"
+          className="w-[25px] transition duration-300 hover:scale-125"
           href="https://github.com/Darrenf040"
           target="_blank"
         >
           <img src={github} alt="Github icon" />
         </a>
-        <a className="w-[25px]" href="mailto:darrenfr83@email.com">
+        <a
+          className="w-[25px] transition duration-300 hover:scale-125"
+          href="mailto:darrenfr83@email.com"
+        >
           <img src={email} alt="Mail icon" />
         </a>
       </div>
