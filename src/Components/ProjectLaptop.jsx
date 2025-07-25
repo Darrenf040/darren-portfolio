@@ -6,7 +6,7 @@ Source: https://sketchfab.com/3d-models/dell-laptop-1190bd8ffa3247698245fd5e3b40
 Title: Dell Laptop
 */
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -19,8 +19,13 @@ export default function ProjectLaptop(props) {
   const txt = useVideoTexture(
     props.video
       ? props.video
-      : "/darren-portfolio/textures/project/sample_video.mov"
+      : "/darren-portfolio/textures/project/sample_video.mov", {
+        loop: true,
+        muted: true,
+        autoplay: false
+      }
   );
+
 
   useGSAP(() => {
     gsap.from(groupRef.current.rotation, {

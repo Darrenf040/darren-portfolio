@@ -8,27 +8,85 @@ import link from "/src/assets/icons/link.svg";
 import leftArrow from "/src/assets/icons/left-arrow.svg";
 import rightArrow from "/src/assets/icons/right-arrow.svg";
 import github from "/src/assets/icons/green-github.svg";
+import nextjs from "/src/assets/icons/nextjs.svg";
+import supabase from "/src/assets/icons/supabase.svg";
+import tailwind from "/src/assets/icons/tailwind.svg";
+import salonVideo from "/src/assets/videos/hair-salon.mp4";
+import themeparkVideo from "/src/assets/videos/themepark.mp4";
+import aau from "/src/assets/videos/aau.mp4";
+import ttt from "/src/assets/videos/tictactoe.mp4";
+
+
+
+
+
 import { Suspense, useEffect, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Center, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import ProjectLaptop from "../Components/ProjectLaptop";
 import CanvasLoader from "../Components/CanvasLoader";
 
+const projects = [
+  {
+    name: "Hair Salon Appointment Booking", 
+    description: "Designed and developed a modern, responsive website for a local hair salon to showcase services, pricing, and booking options. The site features a clean, user-friendly layout with mobile optimization, SEO enhancements, and integrated contact forms to improve client engagement and appointment scheduling. Additionally, implemented email and SMS automations for appointment reminders, along with push notifications to enhance customer retention and communication",
+    techStackIcons: [nextjs, supabase, tailwind],
+    liveSite: "https://www.changezhairsalons.com",
+    projectPreview: salonVideo
+
+  },
+  {
+    name: "Theme Park Management",
+    description:
+      "A full-stack web application for streamlined theme park management with role-based access for customers, employees, and admins. Features include ticket purchasing, employee dashboards for ride/event management, admin tools for park operations, secure authentication, real-time data updates, and robust reporting — delivering an efficient and intuitive management experience.",
+    techStackIcons: [react, node, mysql],
+    liveSite: "https://gleaming-lokum-158537.netlify.app/",
+    github: "https://github.com/Darrenf040/themepark",
+    projectPreview: themeparkVideo,
+    extra:
+      "Please be aware that since the web app is hosted on a free tier, it may take a little longer to load the live site initially. Thank you for your patience!",
+  },
+  {
+    name: "AAU basketball website",
+    description:
+      "Designed and developed a responsive website for an AAU basketball organization to showcase team information, game schedules, and player highlights. The site includes smooth scrolling navigation for easy access to sections like teams, schedule, and contact, as well as mobile optimization for on-the-go users. Integrated contact forms and media galleries to improve engagement with players, parents, and recruiters",
+    techStackIcons: [nextjs],
+    liveSite: "https://aau-basketball-website.vercel.app/",
+    projectPreview: aau,
+  },
+  {
+    name: "Tic Tac Toe",
+    description:
+      "This project is a classic Tic Tac Toe game built with HTML, CSS, and JavaScript. It offers three difficulty levels—Easy, Medium, and Hard—providing a fun and challenging experience for players of all skill levels. The Hard mode features an unbeatable AI powered by the Minimax algorithm, ensuring optimal gameplay. The project demonstrates clean UI design, dynamic interactivity, and advanced algorithm implementation.",
+    techStackIcons: [html, css, js],
+    liveSite: "https://darrenf040.github.io/Tic-Tac-Toe/",
+    github: "https://github.com/Darrenf040/Tic-Tac-Toe",
+    projectPreview: ttt,
+  },
+];
+
+
 function Projects() {
   const [projectIndex, setProjectIndex] = useState(0);
+
   const currentProject = projects[projectIndex];
   const projectLength = projects.length;
   const projectPreview = currentProject.projectPreview;
 
-  const handleNavigation = (direction) => {
-    setProjectIndex((prevIndex) => {
-      if (direction == "previous") {
-        return prevIndex == 0 ? projectLength - 1 : prevIndex - 1;
-      } else {
-        return prevIndex == projectLength - 1 ? 0 : prevIndex + 1;
-      }
-    });
-  };
+const handleNavigation = (direction) => {
+  const section = document.getElementById("projects");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+
+  setProjectIndex((prevIndex) => {
+    if (direction === "previous") {
+      return prevIndex === 0 ? projectLength - 1 : prevIndex - 1;
+    } else {
+      return prevIndex === projectLength - 1 ? 0 : prevIndex + 1;
+    }
+  });
+};
   return (
     <section id="projects" className="desktop:py-40">
       <h1 className="desktop:ml-40 tablet:ml-5 phone:ml-3 my-5">02 My Work</h1>
@@ -119,37 +177,6 @@ function Projects() {
   );
 }
 
-const projects = [
-  {
-    name: "Theme Park Managment",
-    description:
-      "This project is a full-stack web application designed to streamline theme park management with role-based functionality for customers, employees, and admins. Customers can explore park details, register/login, and purchase tickets through an intuitive interface. Employees manage database operations, access ride and event data, and track maintenance tasks via a dedicated dashboard. Admins oversee park operations, including employee management, ticket availability, park scheduling, and weather-dependent capacity planning. The app integrates secure user authentication, real-time data updates, and robust reporting features, offering a seamless and efficient way to interact with the park's database.",
-    techStackIcons: [react, node, mysql],
-    liveSite: "https://gleaming-lokum-158537.netlify.app/",
-    github: "https://github.com/Darrenf040/themepark",
-    projectPreview: "",
-    extra:
-      "Please be aware that since the web app is hosted on a free tier, it may take a little longer to load the live site initially. Thank you for your patience!",
-  },
-  {
-    name: "Weather App",
-    description:
-      "This project is a basic weather application built using JavaScript and Webpack. It fetches real-time weather data from a public API using asynchronous methods, allowing users to check current conditions for any location they search. The app highlights a simple, efficient design and demonstrates the seamless use of Webpack for modular JavaScript development.",
-    techStackIcons: [js],
-    github: "https://github.com/Darrenf040/Weather-app",
-    liveSite: "",
-    projectPreview: "",
-  },
-  {
-    name: "Tic Tac Toe",
-    description:
-      "This project is a classic Tic Tac Toe game built with HTML, CSS, and JavaScript. It offers three difficulty levels—Easy, Medium, and Hard—providing a fun and challenging experience for players of all skill levels. The Hard mode features an unbeatable AI powered by the Minimax algorithm, ensuring optimal gameplay. The project demonstrates clean UI design, dynamic interactivity, and advanced algorithm implementation.",
-    techStackIcons: [html, css, js],
-    liveSite: "https://darrenf040.github.io/Tic-Tac-Toe/",
-    github: "https://github.com/Darrenf040/Tic-Tac-Toe",
-    projectPreview: "",
-  },
-];
 const Laptop3DModel = ({ projectPreview, projectIndex }) => {
   const { viewport } = useThree();
   const [scale, setScale] = useState(0);
