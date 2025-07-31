@@ -32,7 +32,7 @@ export default function Slider() {
           {filteredSkills.map((icon) => (
             <div
               key={icon.id}
-              className="desktop:w-[100px] desktop:h-[100px] flex-shrink-0 mx-2 desktop:scale-100 tablet:max-desktop:scale-75 phone:max-tablet:scale-50 desktop:ml-20 tablet:ml-10 phone:ml-5"
+              className="desktop:w-[100px] desktop:h-[100px] tablet:w-[75px] phone:w-[40px] mx-2  desktop:ml-20 tablet:ml-10 phone:ml-5"
             >
               <img src={icon.src} alt={icon.alt} className="w-full h-auto" />
             </div>
